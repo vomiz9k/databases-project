@@ -3,12 +3,12 @@ SELECT themes.name, FLOOR(AVG(marketplaces.price)) AS average_price
 FROM lego.sets INNER JOIN lego.marketplaces ON sets.id = marketplaces.set_id INNER JOIN lego.themes ON sets.theme_id = themes.id
 GROUP BY themes.id
 HAVING COUNT(sets.theme_id) > 10
-ORDER BY average_price DESC;
+ORDER BY average_price DESC LIMIT 10;
 
 --Найдем 10 самых дорогих наборов
 SELECT  set_id, price, link
 FROM lego.sets INNER JOIN lego.marketplaces ON sets.id = marketplaces.set_id
-ORDER BY price DESC;
+ORDER BY price DESC LIMIT 10;
 
 --Найдем наборы, которые можно собирать мне, а вам нельзя. Посмотрим на их рейтинг и поймем, много ли вы теряете.
 SELECT id, min_age, max_age, avg(rating) AS rating
