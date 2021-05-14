@@ -28,14 +28,6 @@ CREATE TABLE lego.pieces
 
 CREATE UNIQUE INDEX piece_id ON lego.pieces(id);
 
-CREATE TABLE lego.colors
-(
-    id INT PRIMARY KEY,
-    name TEXT
-);
-
-CREATE UNIQUE INDEX color_id ON lego.colors(id);
-
 CREATE TABLE lego.persons
 (
     id TEXT PRIMARY KEY,
